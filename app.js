@@ -28,7 +28,7 @@ document.querySelectorAll('dialog').forEach(dialog=>{
 });
 document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{
  document.querySelectorAll('[data-filter]').forEach(b=>{const active=b===button;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});
- document.querySelectorAll('[data-category]').forEach(card=>{card.hidden=button.dataset.filter!=='all'&&card.dataset.category!==button.dataset.filter;});
+ document.querySelectorAll('[data-category]').forEach(card=>{card.hidden=button.dataset.filter==='featured'?card.dataset.featured!=='true':button.dataset.filter!=='all'&&card.dataset.category!==button.dataset.filter;});
 }));
 function openProject(key){
  const p=projects[key];if(!p)return;
